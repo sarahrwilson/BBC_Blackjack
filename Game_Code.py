@@ -11,7 +11,7 @@ in the game.
 import random 
 
 # create a boolean to describe the nature of the player
-PlayerIn = True 
+Active = True 
 
 # create a list of the deck of cards
 Deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K',
@@ -52,12 +52,12 @@ for x in range(2):
 # create a "while" loop for the game
 # note: here the loop gives the player the option to either 'Hit' or 'Stand'
 #       it displays the current cards and total at each stage
-while PlayerIn:                                                 # open the game with the player active
+while Active:                                                 # open the game with the player active
     print(f"Your hand is {Player} with score {Score(Player)}")  # display initial hand
-    if PlayerIn:
+    if Active:
         decision = input("Stand or Hit\n")                      # player decides to stand or hit
     if decision == "Stand":                                     # player stands and the player is no longer active
-        PlayerIn = False
+        Active = False
     else:                                                       # player hits and another card is dealt
         Deal(Player)
     if Score(Player) >= 21:                                     # if player's score is greater than 21, game stops
